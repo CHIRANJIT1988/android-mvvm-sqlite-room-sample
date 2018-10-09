@@ -1,0 +1,59 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+        name="studentItemVM"
+        type="com.mvvm.sqlite.room.viewmodel.ItemStudentViewModel"/>
+
+  </data>
+
+  <RelativeLayout
+      android:id="@+id/item_student_root"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:background="?attr/selectableItemBackground" >
+
+      <ImageView
+          android:id="@+id/image_student"
+          android:layout_width="60dp"
+          android:layout_height="60dp"
+          android:layout_marginEnd="8dp"
+          tools:imageUrl="@{studentItemVM.profilePic}" />
+
+      <TextView
+          android:id="@+id/label_name"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignTop="@+id/image_student"
+          android:layout_toEndOf="@+id/image_student"
+          android:textColor="@android:color/primary_text_light"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          tools:text="@{studentItemVM.name}"/>
+
+      <TextView
+          android:id="@+id/label_phone"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignStart="@+id/label_name"
+          android:layout_below="@+id/label_name"
+          android:textColor="@android:color/secondary_text_light"
+          android:textSize="14sp"
+          tools:text="@{studentItemVM.phone}"/>
+
+      <TextView
+          android:id="@+id/label_mail"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignStart="@+id/label_phone"
+          android:layout_below="@+id/label_phone"
+          android:textColor="@android:color/secondary_text_light"
+          android:textSize="14sp"
+          tools:text="@{studentItemVM.email}"/>
+
+  </RelativeLayout>
+
+</layout>
